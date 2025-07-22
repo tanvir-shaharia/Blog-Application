@@ -1,0 +1,18 @@
+<div class="mx-7xl w-full mx-auto py-24 flex flex-col px-10">
+  <% if Current.session.user %>
+    <div class="flex mb-8 gap-2">
+      <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        You Are Admin
+      </button>
+      <%#= link_to post_url(13),class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"%>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+        Create a Blog Post
+      </button>
+    </div>
+  <% end %>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 pb-24">
+    <% @posts.each do |post| %>
+      <%= render partial: "post", locals: { post: post } %>
+    <% end %>
+  </div>
+</div>
