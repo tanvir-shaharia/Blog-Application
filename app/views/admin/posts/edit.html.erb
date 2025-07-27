@@ -1,0 +1,20 @@
+<div class="max-w-7sl w-full mx-auto py-12 px-48">
+  <h1 class="text-5xl text-gray-900 mb-8"> Update Blog Post</h1>
+  <%= form_with model: @post, url: admin_post_path do |f| %>
+    <div class="mb-4">
+      <%= f.label :title, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-whit" %>
+      <%= f.text_field :title, class: "block w-full p-4 text-gray-900 border border-gray-300 rounded-lg text-base focus:border-blue-500" %>
+    </div>
+    <div class="mb-4">
+      <%= f.label :banner_image, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-whit" %>
+      <%= f.file_field :banner_image, class: "block w-full p-4 text-gray-900 border border-gray-300 rounded-lg text-base focus:border-blue-500" %>
+    </div>
+    <div class="mb-4">
+      <%= f.label :body, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-whit" %>
+      <%= f.rich_text_area :body, class: "block w-full p-4 text-gray-900 border border-gray-300 rounded-lg text-base focus:border-blue-500" %>
+    </div>
+    <div class="mb-8">
+      <button type="submit" class="text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Update Blog</button>
+    </div>
+  <% end %>
+</div>
